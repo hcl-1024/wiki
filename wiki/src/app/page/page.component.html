@@ -1,0 +1,7 @@
+<h1>{{page.title}}</h1>
+<h1 *ngFor="let heading of page.headings; index as i">
+    {{heading}}
+    <h1 *ngFor="let con of page.content[i]">
+        {{con}}
+    </h1>
+</h1>

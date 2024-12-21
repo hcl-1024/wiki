@@ -1,0 +1,2 @@
+<app-title-form [currentForm]="page.title" submittedForm="send($event)"></app-title-form>
+<app-part-form *ngFor="let part of part_page; index as i" [currentForm]="part_page[i]" submittedForm="send($event)"></app-part-form>

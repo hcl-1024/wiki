@@ -1,0 +1,12 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <input id="title" type="text" formControlName="title" placeholder="Title" class="h-10 w-11/12">
+
+    <div *ngIf="form.title.invalid && (form.title.dirty || form.title.touched)">
+        <div *ngIf="form.title.hasError('maxLength')">
+            Title must not be over 100 characters. 
+        </div>
+        <div *ngIf="form.title.hasError('required')">
+            Title is required.
+        </div>
+    </div>
+</form>

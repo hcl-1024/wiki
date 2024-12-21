@@ -1,0 +1,21 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <input id="heading" type="text" formControlName="heading" placeholder="Heading" class="h-10 w-11/12">
+
+    <div *ngIf="form.heading.invalid && (form.heading.dirty || form.heading.touched)">
+        <div *ngIf="form.heading.hasError('maxLength')">
+            Title must not be over 100 characters. 
+        </div>
+        <div *ngIf="form.heading.hasError('required')">
+            Heading is required.
+        </div>
+    </div>
+
+    <input id="content" type="text" formControlName="content" placeholder="Content" class="h-10 w-11/12 my-2">
+    <div *ngIf="form.content.invalid && (form.content.dirty || form.content.touched)">
+        <div *ngIf="form.content.hasError('required')">
+            Content is required.
+        </div>
+    </div>
+
+    <input type="submit" [disabled]="!partForm.valid">
+</form>
